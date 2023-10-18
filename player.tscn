@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl7sxwyu4mbt5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_qcugn"]
+[ext_resource type="Texture2D" uid="uid://f43u1gxggid7" path="res://bazzabogan.png" id="1_t6pav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gioxr"]
+atlas = ExtResource("1_t6pav")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntquu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gioxr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w8wf"]
+height = 32.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_qcugn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ntquu")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7w8wf")
