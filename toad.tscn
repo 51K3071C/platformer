@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://b47tqtnktm3ja"]
+
+[ext_resource type="Script" path="res://toad.gd" id="1_ka7dr"]
+[ext_resource type="Texture2D" uid="uid://bbalmatowdn5k" path="res://toad.png" id="2_wotae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu5mr"]
+atlas = ExtResource("2_wotae")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhxl8"]
+atlas = ExtResource("2_wotae")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apb1a"]
+atlas = ExtResource("2_wotae")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juuie"]
+atlas = ExtResource("2_wotae")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db512"]
+atlas = ExtResource("2_wotae")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bl58"]
+atlas = ExtResource("2_wotae")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7alf6"]
+atlas = ExtResource("2_wotae")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5rxn"]
+atlas = ExtResource("2_wotae")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6o8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu5mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhxl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apb1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juuie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db512")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bl58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7alf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5rxn")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jqc1g"]
+
+[node name="toad" type="CharacterBody2D"]
+script = ExtResource("1_ka7dr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_q6o8v")
+animation = &"hop"
+autoplay = "hop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_jqc1g")
