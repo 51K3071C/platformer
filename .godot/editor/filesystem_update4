@@ -7,3 +7,7 @@ res://player.tscn
 res://toad.tscn
 res://coin.tscn
 res://world.gd
+res://coin.gd
+res://global.gd
+res://coin_gui.gd
+res://coin_gui.tscn
