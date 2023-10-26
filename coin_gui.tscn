@@ -8,3 +8,9 @@ script = ExtResource("1_3ep52")
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 1.0
+offset_right = 139.0
+offset_bottom = 24.0

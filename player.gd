@@ -31,7 +31,7 @@ func update_animation(direction):
 		return
 	if is_jumping:
 		animated_sprite_2d.play("jump")
-	elif direction != 0:
+	if direction != 0:
 		animated_sprite_2d.flip_h = (direction < 0)
 		animated_sprite_2d.play("run")
 	else:
@@ -45,7 +45,13 @@ func die():
 	is_dying = true
 	animated_sprite_2d.play("die")
 	await move_player_up_and_down()
-	get_tree().reload_current_scene()
+	Global.player_lives -= 1
+	if Global.player_lives > 0:
+		print("Reloading Scene...")
+		get_tree().reload_current_scene()
+	else:
+		queue_free()
+		#get_tree().change_scene_to_file("res://gameover.tscn")
 func move_player_up_and_down():
 	var start_position = position
 	var up_position = start_position + Vector2(0, -100)
