@@ -76,7 +76,7 @@ height = 28.0
 size = Vector2(26, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgu1v"]
-size = Vector2(29, 6)
+size = Vector2(29, 8)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_qcugn")
@@ -100,7 +100,7 @@ shape = SubResource("RectangleShape2D_nu8sa")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="feet"]
-position = Vector2(2, 13)
+position = Vector2(2, 14)
 shape = SubResource("RectangleShape2D_tgu1v")
 
 [node name="death_timer" type="Timer" parent="."]

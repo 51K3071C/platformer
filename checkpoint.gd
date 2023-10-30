@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,10 +10,3 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_start_pressed():
-	get_tree().change_scene_to_file("res://world.tscn")
-	Global.player_lives = 3
-
-func _on_quit_pressed():
-	get_tree().quit()
