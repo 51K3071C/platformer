@@ -18,3 +18,7 @@ res://questionblock.gd
 res://questionblock.tscn
 res://beer.tscn
 res://beer.gd
+res://big_toad.gd
+res://toad.gd
+res://thong.tscn
+res://thong_power_up.tscn

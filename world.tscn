@@ -155,5 +155,8 @@ shape = SubResource("CircleShape2D_o6nwh")
 [node name="questionblock" parent="." instance=ExtResource("10_k526l")]
 position = Vector2(72, 508)
 
+[node name="questionblock2" parent="." instance=ExtResource("10_k526l")]
+position = Vector2(133, 505)
+
 [connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
 [connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
