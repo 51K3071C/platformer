@@ -1,3 +1,8 @@
+TileMap
+ColorRect
+CanvasModulate
+CPUParticles2D
+GPUParticles2D
 Timer
 Sprite2D
 CharacterBody2D
@@ -8,8 +13,6 @@ Button
 CanvasLayer
 Label
 Camera2D
-ColorRect
-TileMap
 AudioStreamPlayer2D
 RayCast2D
 AnimatedSprite2D
