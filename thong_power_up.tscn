@@ -1,45 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cahvo6gidb0s6"]
+[gd_scene load_steps=5 format=3 uid="uid://cahvo6gidb0s6"]
 
-[ext_resource type="Texture2D" uid="uid://dhso58cnpbcg1" path="res://thong.png" id="1_evmpa"]
 [ext_resource type="Script" path="res://thong_power_up.gd" id="1_yx644"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbple"]
-atlas = ExtResource("1_evmpa")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6lsw"]
-atlas = ExtResource("1_evmpa")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4mqyp"]
-atlas = ExtResource("1_evmpa")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_plke3"]
-atlas = ExtResource("1_evmpa")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qo5ly"]
-atlas = ExtResource("1_evmpa")
-region = Rect2(128, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://ck2um2si04hrd" path="res://thongs.png" id="2_im3pw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hg4kk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbple")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i6lsw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4mqyp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_plke3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qo5ly")
+"texture": ExtResource("2_im3pw")
 }],
 "loop": true,
 "name": &"default",
@@ -53,12 +21,21 @@ collision_mask = 3
 script = ExtResource("1_yx644")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -5.75)
-scale = Vector2(0.8125, 0.765625)
+position = Vector2(-1, -10)
+scale = Vector2(0.115, 0.173333)
 sprite_frames = SubResource("SpriteFrames_hg4kk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -6)
+position = Vector2(-1, -6)
 shape = SubResource("CapsuleShape2D_174qr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+explosiveness = 0.2
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 3.05
+gravity = Vector2(0, 100)
+color = Color(0.478431, 0.34902, 0.00392157, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5g877hapucey"]
+[gd_scene load_steps=15 format=3 uid="uid://b5g877hapucey"]
 
 [ext_resource type="Texture2D" uid="uid://dowjpy4yki32q" path="res://lvl2-block.png" id="1_qhj5y"]
 [ext_resource type="Script" path="res://underworld.gd" id="1_qml58"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kduk85f53gqu" path="res://big_toad.tscn" id="5_86jx0"]
 [ext_resource type="PackedScene" uid="uid://b64e70ba4w2dc" path="res://coin_gui.tscn" id="7_yxt1b"]
 [ext_resource type="PackedScene" uid="uid://6s0kwp4kl25g" path="res://questionblock.tscn" id="8_y3d7v"]
+[ext_resource type="Texture2D" uid="uid://b0xyf87q1c7fh" path="res://flagpole.png" id="9_hrwy7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7d8a"]
 texture = ExtResource("1_qhj5y")
@@ -30,6 +31,8 @@ sources/1 = SubResource("TileSetAtlasSource_aewtd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ledtp"]
 size = Vector2(1884.5, 23.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_go533"]
 
 [node name="underworld" type="Node2D"]
 script = ExtResource("1_qml58")
@@ -83,4 +86,15 @@ shape = SubResource("RectangleShape2D_ledtp")
 [node name="questionblock" parent="." instance=ExtResource("8_y3d7v")]
 position = Vector2(589, 488)
 
+[node name="Flagpole" type="Sprite2D" parent="."]
+position = Vector2(1483, 503)
+texture = ExtResource("9_hrwy7")
+
+[node name="transition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition"]
+position = Vector2(1483, 574)
+shape = SubResource("CircleShape2D_go533")
+
 [connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
