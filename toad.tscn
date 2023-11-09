@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b47tqtnktm3ja"]
+[gd_scene load_steps=10 format=3 uid="uid://b47tqtnktm3ja"]
 
 [ext_resource type="Script" path="res://toad.gd" id="1_ka7dr"]
 [ext_resource type="Texture2D" uid="uid://5pbepgs8vm45" path="res://saiba1.png" id="2_cs4nj"]
 [ext_resource type="Texture2D" uid="uid://cy7vd01ewejg6" path="res://saiba2.png" id="3_yltqk"]
 [ext_resource type="Texture2D" uid="uid://b3ka4chpafgqv" path="res://saiba3.png" id="4_4ey4m"]
 [ext_resource type="Texture2D" uid="uid://ddj2byoti68en" path="res://saiba4.png" id="5_o8lph"]
+[ext_resource type="AudioStream" uid="uid://bvcj1g37wueo8" path="res://VOCAL EVIL Impact Hit Slash 04.wav" id="6_g5u3y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q6o8v"]
 animations = [{
@@ -43,7 +44,7 @@ scale = Vector2(0.284091, 0.15625)
 sprite_frames = SubResource("SpriteFrames_q6o8v")
 animation = &"hop"
 autoplay = "hop"
-frame_progress = 0.487528
+frame_progress = 0.704952
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
@@ -54,5 +55,8 @@ shape = SubResource("RectangleShape2D_fq0ly")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(0, -13.75)
 shape = SubResource("RectangleShape2D_062aa")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_g5u3y")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cl7sxwyu4mbt5"]
+[gd_scene load_steps=33 format=3 uid="uid://cl7sxwyu4mbt5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qcugn"]
 [ext_resource type="Texture2D" uid="uid://b2kiws5h44rxx" path="res://Guko death.png" id="2_tmiyc"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://m6oncg1fpmgb" path="res://Supersandwich run 2.png" id="24_jln52"]
 [ext_resource type="Texture2D" uid="uid://xcyfyi554o34" path="res://Supersandwich run 3.png" id="25_m06fo"]
 [ext_resource type="Texture2D" uid="uid://brfk1lelco3wa" path="res://Supersandwich run 4.png" id="26_nwpro"]
+[ext_resource type="AudioStream" uid="uid://bvdckt86cvknd" path="res://VOCAL CUTE Call Affection 03.wav" id="27_2hepc"]
+[ext_resource type="AudioStream" uid="uid://bvcj1g37wueo8" path="res://VOCAL EVIL Impact Hit Slash 04.wav" id="28_22cy2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ntquu"]
 animations = [{
@@ -164,7 +166,7 @@ position = Vector2(2.5, -0.499999)
 scale = Vector2(0.3375, 0.3875)
 sprite_frames = SubResource("SpriteFrames_ntquu")
 animation = &"die"
-frame_progress = 0.44949
+frame_progress = 0.190725
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -187,5 +189,11 @@ shape = SubResource("RectangleShape2D_tgu1v")
 [node name="death_timer" type="Timer" parent="."]
 
 [node name="ThongFireTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_2hepc")
+
+[node name="enemy_death_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_22cy2")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

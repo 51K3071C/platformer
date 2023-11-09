@@ -79,13 +79,15 @@ func _on_hitbox_body_entered(body):
 				Global.current_state = Global.PlayerState.SMALL
 			Global.PlayerState.THONG:
 				Global.current_state = Global.PlayerState.BIG
-
+func death_sound():
+	$enemy_death_sound.play()
 func die():
 	if is_dying:
 		return
 
 	is_dying = true
 	animated_sprite_2d.play("die")
+	$AudioStreamPlayer2D.play()
 	await move_player_up_and_down()
 	Global.player_lives -= 1
 
